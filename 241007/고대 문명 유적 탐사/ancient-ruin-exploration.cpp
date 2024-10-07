@@ -70,7 +70,7 @@ void init_temp_board() {
 	}
 }
 
-void Tamsa() {
+int Tamsa() {
 	Tamsa_com TC;
 	TC.r = 9; TC.r = 9; TC.tiles = 0; TC.rotate = 9;// initialize Tamsa_complete to maximum
 	pair<int, int> C;
@@ -182,6 +182,9 @@ void Tamsa() {
 
 		}
 	}
+	if (TC.rotate == 9) {
+		return -1;
+	}
 	
 	//cout << "Tamsa Completed :\n";
 	for (int i = 0; i < 5; i++) {
@@ -196,6 +199,7 @@ void Tamsa() {
 	cout << "Rows :" << TC.r << endl;
 	cout << "Columns :" << TC.c << endl;*/
 	res = TC.tiles;
+	return 0;
 }
 
 int main() {
@@ -213,7 +217,9 @@ int main() {
 	for (int i = 0; i < K; i++) {
 		//탐사 진행
 		res = 0;
-		Tamsa();
+		if (Tamsa() < 0) {
+			return 0;
+		}
 		
 		//completed board 
 		//cout << "\n리스트 채우기 진행 \n";
