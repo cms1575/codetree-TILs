@@ -74,6 +74,7 @@ int Tamsa() {
 	Tamsa_com TC;
 	TC.r = 9; TC.r = 9; TC.tiles = 0; TC.rotate = 9;// initialize Tamsa_complete to maximum
 	pair<int, int> C;
+	bool updated = false;
 	// a,b for center loop, d for rotate loop, e for rotate loop
 	for (int a = 0; a < 3; a++) {
 		for (int b = 0; b < 3; b++) {
@@ -129,6 +130,7 @@ int Tamsa() {
 								pair<int, int> curr = B.front(); B.pop();
 								temp[curr.X][curr.Y] = 0;
 								removed_tile++;
+								updated = true;
 							}
 							//cout<<"\n 3회 중복 발생 \n";
 							//print_board();
@@ -137,6 +139,8 @@ int Tamsa() {
 
 					}
 				}
+
+
 				bool exchange = false;
 
 				if (TC.tiles < removed_tile) {
@@ -182,7 +186,7 @@ int Tamsa() {
 
 		}
 	}
-	if (TC.rotate == 9) {
+	if (updated==false) {
 		return -1;
 	}
 	
