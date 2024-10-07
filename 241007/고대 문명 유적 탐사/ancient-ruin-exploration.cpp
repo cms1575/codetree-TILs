@@ -208,6 +208,8 @@ int main() {
 	for (int i = 0; i < M; i++) {
 		cin >> list[i];
 	}
+	int index = 0;
+
 	for (int i = 0; i < K; i++) {
 		//탐사 진행
 		res = 0;
@@ -216,7 +218,7 @@ int main() {
 		//completed board 
 		//cout << "\n리스트 채우기 진행 \n";
 		bool again = true;
-		int index = 0;
+		
 		while (again) {
 			for (int j = 0; j < 5; j++) {
 				for (int i = 4; i >= 0; i--) {
