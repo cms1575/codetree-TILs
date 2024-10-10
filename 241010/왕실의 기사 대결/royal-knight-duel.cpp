@@ -19,6 +19,10 @@ int dx[4] = { -1,0,1,0 };
 int dy[4] = { 0,1,0,-1 };
 
 void move(int index, int d) {
+	if (k[index].w <= 0) {
+		return;
+	}
+
 	//선 테스트
 	//vis선언및초기화
 	vector<bool> vis(31, false);
