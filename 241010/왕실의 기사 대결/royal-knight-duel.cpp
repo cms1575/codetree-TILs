@@ -80,7 +80,7 @@ void move(int index, int d) {
 
 	//vis안된 나이트들 옮기기(밀어지지않은 나이트들)
 	for (int i = 1; i <= N; i++) {
-		if (vis[i] == false) {
+		if (vis[i] == false&&k[i].k>0) {
 			for (int a = k[i].r; a < k[i].r + k[i].h; a++) {
 				for (int b = k[i].c; b < k[i].c + k[i].w; b++) {
 					temp[a][b] = i;
@@ -90,7 +90,7 @@ void move(int index, int d) {
 		else {//tk를 k에 반영하기
 			k[i].r = tk[i].r;
 			k[i].c = tk[i].c;
-			damage[i] += k[i].k - tk[i].k;
+			damage[i] += (k[i].k - tk[i].k);
 			k[i].k = tk[i].k;
 			
 			if (k[i].k <= 0) {
