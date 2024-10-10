@@ -19,7 +19,7 @@ int dx[4] = { -1,0,1,0 };
 int dy[4] = { 0,1,0,-1 };
 
 void move(int index, int d) {
-	if (k[index].w <= 0) {
+	if (k[index].k <= 0) {
 		return;
 	}
 
