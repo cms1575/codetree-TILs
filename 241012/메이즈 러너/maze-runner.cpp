@@ -155,7 +155,7 @@ int maze() {
         if (탈출성공[i] == false) { all = false; break; }
     }
     if (all) {
-        cout << "전원탈출!";
+        //cout << "전원탈출!";
         return -1;
     }
 
